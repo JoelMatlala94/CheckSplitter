@@ -5,15 +5,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<Item> itemList = new ArrayList<>();
-        itemList.add(addItem(sc)); // pass scanner here
         boolean answer = true;
         String Choice = "";
-
         System.out.println("Welcome to the Check Splitter");
         while(answer){
             System.out.println("1 Add an item");
             System.out.println("2 Remove an item");
-            System.out.println("3");
+            System.out.println("3 Display Items");
             System.out.println("4 Closeout");
             System.out.println("5 Exit");
 
@@ -25,11 +23,11 @@ public class Main {
                     break;
 
                 case "2":
-                    // remove logic here
+                    
                     break;
 
                 case "3":
-                    // not yet implemented
+                    showItems(itemList);
                     break;
 
                 case "4":
@@ -70,5 +68,11 @@ public class Main {
         newItem.displayItem();
 
         return newItem;
+    }
+
+    public static void showItems(ArrayList<Item> items){
+        for(Item entry : items){
+           entry.displayItem();
+        }
     }
 }
